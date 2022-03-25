@@ -5,12 +5,13 @@ app "api" {
     use "docker" {
       buildkit           = false
       disable_entrypoint = false
+      platform           = "amd64"
     }
 
     registry {
       use "aws-ecr" {
         repository = "hashicorp-dev-hello-world"
-        region     = "eu-west-1"
+        region     = "us-east-1"
         tag        = "v1"
       }
     }
