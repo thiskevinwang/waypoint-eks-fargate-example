@@ -3,37 +3,27 @@ terraform {
   required_providers {
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "2.0.3"
+      version = "2.8.0"
     }
 
     helm = {
       source  = "hashicorp/helm"
-      version = "2.0.3"
+      version = "2.4.1"
     }
 
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 2.28.1"
+      version = ">= 4.5.0"
     }
 
     random = {
       source  = "hashicorp/random"
-      version = "~> 2.1"
+      version = "~> 3.1.0"
     }
 
     local = {
       source  = "hashicorp/local"
-      version = "~> 1.2"
-    }
-
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 2.1"
-    }
-
-    template = {
-      source  = "hashicorp/template"
-      version = "~> 2.1"
+      version = "~> 2.2.2"
     }
   }
 }
@@ -81,7 +71,7 @@ resource "random_string" "suffix" {
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "3.12.0"
+  version = "3.13.0"
 
   name = var.vpc_name
 
